@@ -4,6 +4,14 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128979535-1"></script>
 <script>
+	const watch = () => {
+		const targets = document.querySelectorAll('[style="position:absolute;top:185px;right:10px;font-size:12px;"]');
+		targets.forEach((target) => { target.remove() });
+		if (!targets.length) {
+			requestAnimationFrame(watch);
+		}
+	}
+	watch();
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
